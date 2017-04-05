@@ -2,16 +2,16 @@ CREATE DATABASE wonder;
 USE wonder;
 
 
+DROP TABLE IF EXISTS posts;
+DROP TABLE IF EXISTS invitations;
+DROP TABLE IF EXISTS users;
 DROP TABLE IF EXISTS countries;
 DROP TABLE IF EXISTS salaries;
 DROP TABLE IF EXISTS time_parts;
 DROP TABLE IF EXISTS contacts;
 DROP TABLE IF EXISTS categories;
-DROP TABLE IF EXISTS invitations;
-DROP TABLE IF EXISTS users;
-DROP TABLE IF EXISTS posts;
- 
-    
+  
+
 CREATE TABLE countries (
 	id INT(11) NOT NULL AUTO_INCREMENT,
     city VARCHAR(50),
@@ -49,6 +49,9 @@ CREATE TABLE contacts (
 CREATE TABLE categories (
 	id INT(11) NOT NULL AUTO_INCREMENT,
     name VARCHAR(50),
+    parent_id INT(11),
+    lft INT(11),
+    rght INT(11),
     PRIMARY KEY(id)
 );
 
@@ -78,7 +81,6 @@ CREATE TABLE invitations (
     receiver_id INT(11),
     status INT(1) comment "Giống như cái role",
 	PRIMARY KEY(id)
-    
 );
 
 
@@ -94,8 +96,6 @@ CREATE TABLE posts (
     start_date DATETIME,
     end_date DATETIME,
     PRIMARY KEY(id)
-    
-    
 );
 	ALTER TABLE invitations ADD FOREIGN KEY (owner_id) REFERENCES users(id);
     ALTER TABLE invitations ADD FOREIGN KEY (receiver_id) REFERENCES users(id);
