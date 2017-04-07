@@ -34,7 +34,7 @@ INSERT INTO salaries (id, salaries)
 VALUES 	(1,'< 500.000'),
 		(2,'500.000 - 1.000.000'),
         (3,'1.000.000 - 2.000.000'),
-        (4,'2.00.000 - 3.000.000'),
+        (4,'2.000.000 - 3.000.000'),
         (5,'3.000.000 - 4.000.000'),
         (6,'4.000.000 - 5.000.000'),
         (7,'> 5.000.000');
@@ -105,7 +105,7 @@ VALUES 	(1,'Not','not2017','123456','not@gmail.com','09 Hoang Dang','15/02/1997'
 
 CREATE TABLE invitations (
 	id INT(11) NOT NULL AUTO_INCREMENT,
-    owner_id INT(11),
+    sender_id INT(11),
     receiver_id INT(11),
     status INT(1) comment "Giống như cái role",
 	PRIMARY KEY(id)
@@ -133,7 +133,8 @@ VALUES 	(1,'Tim nguoi giup viec','Ngay xua ngay xua co mot nguoi nao do',5,2,1,1
         (4,'Tim nguoi giup viec','Ngay xua ngay xua co mot nguoi nao do',3,2,1,1,2);
 
 
-	ALTER TABLE invitations ADD FOREIGN KEY (owner_id) REFERENCES users(id);
+
+	ALTER TABLE invitations ADD FOREIGN KEY (sender_id) REFERENCES users(id);
     ALTER TABLE invitations ADD FOREIGN KEY (receiver_id) REFERENCES users(id);
 
 	ALTER TABLE posts ADD FOREIGN KEY (salaries_id) REFERENCES salaries(id);
