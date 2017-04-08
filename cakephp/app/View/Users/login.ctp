@@ -30,26 +30,17 @@
 		            </label>
 
 		            <input class="btn btn-theme btn-block" value="Đăng nhập" type="submit" name='ok'></input>
+		            
 
 		            <hr>
 		            
 		            <div class="login-social-link centered">
 
-		            	<p>hoặc bạn có thể đăng nhập qua mạng xã hội</p>
+		            	<p>Chưa có tài khoản?</p>
 
-			                <button class="btn btn-facebook" type="submit"><i class="fa fa-facebook"></i> Facebook</button>
+			                <button class="btn btn-primary" type="submit">Đăng kí</button>
 
-			                <button class="btn btn-twitter" type="submit"><i class="fa fa-twitter"></i> Twitter</button>
-		            </div>
-
-		            <div class="registration">
-
-		                Chưa có tài khoản?<br/>
-
-		                <a class="" href="#">
-		                    Tạo tài khoản mới
-		                </a>
-
+			                <button class="btn btn-danger" type="submit">Trang chủ</button>
 		            </div>
 		
 		        </div>
@@ -82,7 +73,7 @@
 
 		                          <button data-dismiss="modal" class="btn btn-default" type="button">Hủy bỏ</button>
 
-		                          <itput class="btn btn-theme" type="submit" value="Tiếp tục"></input>
+		                          <input class="btn btn-theme" type="submit" value="Tiếp tục"></input>
 
 		                      </div>
 
