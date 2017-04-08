@@ -11,13 +11,24 @@
 	<?php
 		echo $this->Form->input('title', array('label' => 'Tiêu đề', 'class' => 'form-control'));
 		echo $this->Form->input('content', array('label' => 'Nội dung', 'class' => 'form-control'));
-		echo $this->Form->input('salaries_id', array('label' => 'Mã lương', 'class' => 'form-control'));
-		echo $this->Form->input('time_parts_id', array('label' => 'Mã khung giờ', 'class' => 'form-control'));
-		echo $this->Form->input('countries_id', array('label' => 'Mã thành phố', 'class' => 'form-control'));
+		echo "<label>Chọn lương</label>";
+		echo '<select name="data[Post][salaries_id]" class="form-control" id="PostSalariesId" required="required">';
+		if(0 < count($salaries)){
+			foreach ($salaries as $key => $value) {
+				echo '<option value="'. $value['Salaries']['id']  .'">' . $value['Salaries']['salaries'] . '</option>';
+			}
+		}
+		echo '</select>';
+		
+		echo $this->Form->input('time_parts_id', array('label' => 'Loại thời gian', 'class' => 'form-control'));
+		echo $this->Form->input('countries_id', array('label' => 'Thành phố', 'class' => 'form-control'));
+		
 		echo $this->Form->input('users_id', array('label' => 'Mã người dùng', 'class' => 'form-control'));
-		echo $this->Form->input('categories_id', array('label' => 'Mã danh mục', 'class' => 'form-control'));
-		echo $this->Form->input('start_date', array('label' => 'Ngày đăng', 'class' => 'form-control'));
-		echo $this->Form->input('end_date', array('label' => 'Ngày hết hạn', 'class' => 'form-control'));
+		echo $this->Form->input('categories_id', array('label' => 'Tên danh mục', 'class' => 'form-control'));
+		echo "<label>Ngày đăng</label>";
+		echo $this->Form->input('start_date', array('class' => 'col-md-1')); 
+		echo "<label>Ngày hết hạn</label>";
+		echo $this->Form->input('end_date', array( 'class' => 'col-md-1'));
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit')); ?>

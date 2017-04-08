@@ -58,9 +58,9 @@ class PostsController extends AppController {
 			}
 		}
 		$this->loadModel('Post');
-		$salaries = $this->Post->Salaries->find('list');
-		$timeParts = $this->Post->TimeParts->find('list');
-		$countries = $this->Post->Countries->find('list');
+		$salaries = $this->Post->Salaries->find('all');
+		$timeParts = $this->Post->TimeParts->find('all');
+		$countries = $this->Post->Countries->find('all');
 		$users = $this->Post->Users->find('list');
 		$categories = $this->Post->Categories->find('list');
 		$this->set(compact('salaries', 'timeParts', 'countries', 'users', 'categories'));
@@ -88,10 +88,10 @@ class PostsController extends AppController {
 			$options = array('conditions' => array('Post.' . $this->Post->primaryKey => $id));
 			$this->request->data = $this->Post->find('first', $options);
 		}
-		$salaries = $this->Post->Salaries->find('list');
-		$timeParts = $this->Post->TimeParts->find('list');
-		$countries = $this->Post->Countries->find('list');
-		$users = $this->Post->Users->find('list');
+		$salaries = $this->Post->Salaries->find('all');
+		$timeParts = $this->Post->TimeParts->find('all');
+		$countries = $this->Post->Countries->find('all');
+		$users = $this->Post->Users->find('all');
 		$categories = $this->Post->Categories->find('list');
 		$this->set(compact('salaries', 'timeParts', 'countries', 'users', 'categories'));
 	}
