@@ -1,5 +1,11 @@
-<div class="posts form">
-<?php echo $this->Form->create('Post'); ?>
+<style type="text/css" media="screen">
+	.form-control{
+		width: 70%;
+	}
+</style>
+<div class="container">
+	<div class="posts form">
+	<?php echo $this->Form->create('Post'); ?>
 	<fieldset>
 		<legend><?php echo __('Thêm bài đăng'); ?></legend>
 	<?php
@@ -10,7 +16,7 @@
 		echo $this->Form->input('countries_id', array('label' => 'Mã thành phố', 'class' => 'form-control'));
 		echo $this->Form->input('users_id', array('label' => 'Mã người dùng', 'class' => 'form-control'));
 		echo $this->Form->input('categories_id', array('label' => 'Mã danh mục', 'class' => 'form-control'));
-		echo $this->Form->input('start_date', array('label' => 'Ngày tạo', 'class' => 'form-control'));
+		echo $this->Form->input('start_date', array('label' => 'Ngày đăng', 'class' => 'form-control'));
 		echo $this->Form->input('end_date', array('label' => 'Ngày hết hạn', 'class' => 'form-control'));
 	?>
 	</fieldset>
@@ -32,4 +38,6 @@
 		<li><?php echo $this->Html->link(__('List Categories'), array('controller' => 'categories', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Categories'), array('controller' => 'categories', 'action' => 'add')); ?> </li>
 	</ul>
+</div>
+
 </div>
