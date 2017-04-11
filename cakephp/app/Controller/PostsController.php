@@ -54,13 +54,12 @@ class PostsController extends AppController {
 				$this->Flash->success(__('The post has been saved.'));
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Flash->error(__('The post could natcasesort(array)ot be saved. Please, try again.'));
+				$this->Flash->error(__('The post could not be saved. Please, try again.'));
 			}
 		}
-		$this->loadModel('Post');
-		$salaries = $this->Post->Salaries->find('all');
-		$timeParts = $this->Post->TimeParts->find('all');
-		$countries = $this->Post->Countries->find('all');
+		$salaries = $this->Post->Salaries->find('list');
+		$timeParts = $this->Post->TimeParts->find('list');
+		$countries = $this->Post->Countries->find('list');
 		$users = $this->Post->Users->find('list');
 		$categories = $this->Post->Categories->find('list');
 		$this->set(compact('salaries', 'timeParts', 'countries', 'users', 'categories'));
@@ -88,11 +87,11 @@ class PostsController extends AppController {
 			$options = array('conditions' => array('Post.' . $this->Post->primaryKey => $id));
 			$this->request->data = $this->Post->find('first', $options);
 		}
-		$salaries = $this->Post->Salaries->find('all');
-		$timeParts = $this->Post->TimeParts->find('all');
-		$countries = $this->Post->Countries->find('all');
-		$users = $this->Post->Users->find('all');
-		$categories = $this->Post->Categories->find('list');
+		$salaries = $this->Post->Salary->find('list');
+		$timeParts = $this->Post->TimePart->find('list');
+		$countries = $this->Post->Country->find('list');
+		$users = $this->Post->User->find('list');
+		$categories = $this->Post->Category->find('list');
 		$this->set(compact('salaries', 'timeParts', 'countries', 'users', 'categories'));
 	}
 
@@ -157,11 +156,11 @@ class PostsController extends AppController {
 				$this->Flash->error(__('The post could not be saved. Please, try again.'));
 			}
 		}
-		$salaries = $this->Post->Salaries->find('list');
-		$timeParts = $this->Post->TimeParts->find('list');
-		$countries = $this->Post->Countries->find('list');
-		$users = $this->Post->Users->find('list');
-		$categories = $this->Post->Categories->find('list');
+		$salaries = $this->Post->Salary->find('list');
+		$timeParts = $this->Post->TimePart->find('list');
+		$countries = $this->Post->Country->find('list');
+		$users = $this->Post->User->find('list');
+		$categories = $this->Post->Category->find('list');
 		$this->set(compact('salaries', 'timeParts', 'countries', 'users', 'categories'));
 	}
 
@@ -187,11 +186,11 @@ class PostsController extends AppController {
 			$options = array('conditions' => array('Post.' . $this->Post->primaryKey => $id));
 			$this->request->data = $this->Post->find('first', $options);
 		}
-		$salaries = $this->Post->Salaries->find('list');
-		$timeParts = $this->Post->TimeParts->find('list');
-		$countries = $this->Post->Countries->find('list');
-		$users = $this->Post->Users->find('list');
-		$categories = $this->Post->Categories->find('list');
+		$salaries = $this->Post->Salary->find('list');
+		$timeParts = $this->Post->TimePart->find('list');
+		$countries = $this->Post->Country->find('list');
+		$users = $this->Post->User->find('list');
+		$categories = $this->Post->Category->find('list');
 		$this->set(compact('salaries', 'timeParts', 'countries', 'users', 'categories'));
 	}
 

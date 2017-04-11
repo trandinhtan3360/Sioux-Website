@@ -17,10 +17,8 @@
  * @since         CakePHP(tm) v 0.2.9
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
-
 //setLocale(LC_ALL, 'deu');
 //Configure::write('Config.language', 'deu');
-
 /**
  * CakePHP Debug Level:
  *
@@ -35,7 +33,6 @@
  * In development mode, you need to click the flash message to continue.
  */
 	Configure::write('debug', 2);
-
 /**
  * Configure the Error handler used to handle errors for your application. By default
  * ErrorHandler::handleError() is used. It will display errors using Debugger, when debug > 0
@@ -56,7 +53,6 @@
 		'level' => E_ALL & ~E_DEPRECATED,
 		'trace' => true
 	));
-
 /**
  * Configure the Exception handler used for uncaught exceptions. By default,
  * ErrorHandler::handleException() is used. It will display a HTML page for the exception, and
@@ -84,12 +80,10 @@
 		'renderer' => 'ExceptionRenderer',
 		'log' => true
 	));
-
 /**
  * Application wide charset encoding
  */
 	Configure::write('App.encoding', 'UTF-8');
-
 /**
  * To configure CakePHP *not* to use mod_rewrite and to
  * use CakePHP pretty URLs, remove these .htaccess
@@ -110,7 +104,6 @@
  * thus not recommended for production applications.
  */
 	//Configure::write('App.baseUrl', env('SCRIPT_NAME'));
-
 /**
  * To configure CakePHP to use a particular domain URL
  * for any URL generation inside the application, set the following
@@ -119,25 +112,21 @@
  * useful when generating links from the CLI (e.g. sending emails)
  */
 	//Configure::write('App.fullBaseUrl', 'http://example.com');
-
 /**
  * Web path to the public images directory under webroot.
  * If not set defaults to 'img/'
  */
 	//Configure::write('App.imageBaseUrl', 'img/');
-
 /**
  * Web path to the CSS files directory under webroot.
  * If not set defaults to 'css/'
  */
 	//Configure::write('App.cssBaseUrl', 'css/');
-
 /**
  * Web path to the js files directory under webroot.
  * If not set defaults to 'js/'
  */
 	//Configure::write('App.jsBaseUrl', 'js/');
-
 /**
  * Uncomment the define below to use CakePHP prefix routes.
  *
@@ -154,12 +143,10 @@
  *	`manager_index()` and `/manager/controller/index`
  */
 Configure::write('Routing.prefixes', array('admin'));
-
 /**
  * Turn off all caching application-wide.
  */
 	//Configure::write('Cache.disable', true);
-
 /**
  * Enable cache checking.
  *
@@ -169,7 +156,6 @@ Configure::write('Routing.prefixes', array('admin'));
  * or in each action using $this->cacheAction = true.
  */
 	//Configure::write('Cache.check', true);
-
 /**
  * Enable cache view prefixes.
  *
@@ -179,7 +165,6 @@ Configure::write('Routing.prefixes', array('admin'));
  * Note: The final cache file name will then be `prefix_cachefilename`.
  */
 	//Configure::write('Cache.viewPrefix', 'prefix');
-
 /**
  * Session configuration.
  *
@@ -221,17 +206,14 @@ Configure::write('Routing.prefixes', array('admin'));
 	Configure::write('Session', array(
 		'defaults' => 'php'
 	));
-
 /**
  * A random string used in security hashing methods.
  */
-	Configure::write('Security.salt', '');
-
+	Configure::write('Security.salt', 'DYhG93b0qyJfIxfs2guVoUubWwvniR2G0FgaC9mi1');
 /**
  * A random numeric string (digits only) used to encrypt/decrypt strings.
  */
-	Configure::write('Security.cipherSeed', '');
-
+	Configure::write('Security.cipherSeed', '768593096574535424967496836451');
 /**
  * Apply timestamps with the last modified time to static assets (js, css, images).
  * Will append a query string parameter containing the time the file was modified. This is
@@ -241,7 +223,6 @@ Configure::write('Routing.prefixes', array('admin'));
  * timestamping regardless of debug value.
  */
 	//Configure::write('Asset.timestamp', true);
-
 /**
  * Compress CSS output by removing comments, whitespace, repeating tags, etc.
  * This requires a/var/cache directory to be writable by the web server for caching.
@@ -250,7 +231,6 @@ Configure::write('Routing.prefixes', array('admin'));
  * To use, prefix the CSS link URL with '/ccss/' instead of '/css/' or use HtmlHelper::css().
  */
 	//Configure::write('Asset.filter.css', 'css.php');
-
 /**
  * Plug in your own custom JavaScript compressor by dropping a script in your webroot to handle the
  * output, and setting the config below to the name of the script.
@@ -258,20 +238,17 @@ Configure::write('Routing.prefixes', array('admin'));
  * To use, prefix your JavaScript link URLs with '/cjs/' instead of '/js/' or use JsHelper::link().
  */
 	//Configure::write('Asset.filter.js', 'custom_javascript_output_filter.php');
-
 /**
  * The class name and database used in CakePHP's
  * access control lists.
  */
 	Configure::write('Acl.classname', 'DbAcl');
 	Configure::write('Acl.database', 'default');
-
 /**
  * Uncomment this line and correct your server timezone to fix
  * any date & time related errors.
  */
 	//date_default_timezone_set('UTC');
-
 /**
  * `Config.timezone` is available in which you can set users' timezone string.
  * If a method of CakeTime class is called with $timezone parameter as null and `Config.timezone` is set,
@@ -279,7 +256,6 @@ Configure::write('Routing.prefixes', array('admin'));
  * once instead of passing it each time in function calls.
  */
 	//Configure::write('Config.timezone', 'Europe/Paris');
-
 /**
  * Cache Engine Configuration
  * Default settings provided below
@@ -342,7 +318,6 @@ Configure::write('Routing.prefixes', array('admin'));
  *		'prefix' => Inflector::slug(APP_DIR) . '_', //[optional]  prefix every cache file with this string
  *	));
  */
-
 /**
  * Configure the cache handlers that CakePHP will use for internal
  * metadata like class maps, and model schema.
@@ -354,16 +329,13 @@ Configure::write('Routing.prefixes', array('admin'));
  *       and their settings.
  */
 $engine = 'File';
-
 // In development mode, caches should expire quickly.
 $duration = '+999 days';
 if (Configure::read('debug') > 0) {
 	$duration = '+10 seconds';
 }
-
 // Prefix each application on the same server with a different string, to avoid Memcache and APC conflicts.
 $prefix = 'myapp_';
-
 /**
  * Configure the cache used for general framework caching. Path information,
  * object listings, and translation cache files are stored with this configuration.
@@ -375,7 +347,6 @@ Cache::config('_cake_core_', array(
 	'serialize' => ($engine === 'File'),
 	'duration' => $duration
 ));
-
 /**
  * Configure the cache for model and datasource caches. This cache configuration
  * is used to store schema descriptions, and table listings in connections.
