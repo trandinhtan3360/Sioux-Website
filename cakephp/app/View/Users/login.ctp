@@ -38,9 +38,9 @@
 
 		            	<p>Chưa có tài khoản?</p>
 
-			                <button class="btn btn-primary" type="submit">Đăng kí</button>
+			                <button class="btn btn-primary" type="submit"><a href="<?php echo $this->webroot; ?>/users/register1">Đăng kí</a></button>
 
-			                <button class="btn btn-danger" type="submit">Trang chủ</button>
+			                <button class="btn btn-danger" type="submit"><a href ="<?php echo $this->webroot; ?>">Trang chủ</a></button>
 		            </div>
 		
 		        </div>

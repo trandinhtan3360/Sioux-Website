@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-=======
-
->>>>>>> 1dee8433ba3ebef593bf73cd800601233d3e6f8d
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,33 +8,9 @@
 	<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
 
 	<?php echo $this->Html->charset(); ?>
-<<<<<<< HEAD
 	<?php
 
 		echo $this->Html->meta('icon');
-=======
-	<title>
-		
-		<?php echo $this->fetch('title'); ?>
-	</title>
-	<?php
-		// echo $this->Html->meta('icon');
-
-		// echo $this->Html->css('cake.generic');
-
-		// echo $this->fetch('meta');
-		// echo $this->fetch('css');
-		// echo $this->fetch('script');
-
-		echo $this->Html->meta('icon'); // cho hien thi icon cua web minh thiet ke
-
-		echo $this->Html->css('bootstrap.min');// khai bao boostrap
-		echo $this->Html->css('bootstrap-theme.min');
-		echo $this->Html->css('style');
-
-		echo $this->html->script('jquery-1.11.3.min');
-		echo $this->html->script('bootstrap.min');
->>>>>>> 1dee8433ba3ebef593bf73cd800601233d3e6f8d
 
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
@@ -94,11 +66,7 @@ $(document).ready(function () {
 <body class="home">
 	
 		<div id="header">
-<<<<<<< HEAD
 		<?php echo $this->element('header'); ?>		
-=======
-
->>>>>>> 1dee8433ba3ebef593bf73cd800601233d3e6f8d
 		</div>
 		<div >
 
@@ -106,26 +74,10 @@ $(document).ready(function () {
 
 			<?php echo $this->fetch('content'); ?>
 		</div>
-<<<<<<< HEAD
 		<div class="footer">
 			<?php echo $this->element('footer'); ?>
 		</div>
 	
 	
-=======
-		<div id="footer">
-			<!-- <?php echo $this->Html->link(
-					$this->Html->image('cake.power.gif', array('alt' => $cakeDescription, 'border' => '0')),
-					'http://www.cakephp.org/',
-					array('target' => '_blank', 'escape' => false, 'id' => 'cake-powered')
-				);
-			?>
-			<p>
-				<?php echo $cakeVersion; ?>
-			</p> -->
-		</div>
-	</div>
-	<!-- <?php echo $this->element('sql_dump'); ?> -->
->>>>>>> 1dee8433ba3ebef593bf73cd800601233d3e6f8d
 </body>
 </html>
