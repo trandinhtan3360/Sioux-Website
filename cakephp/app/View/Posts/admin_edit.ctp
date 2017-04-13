@@ -1,53 +1,19 @@
-<<<<<<< HEAD
 <div class="posts form">
 <?php echo $this->Form->create('Post'); ?>
 	<fieldset>
-		<legend><?php echo __('Edit Post'); ?></legend>
-	<?php
-		echo $this->Form->input('id');
-		echo $this->Form->input('title');
-		echo $this->Form->input('content');
-		echo $this->Form->input('salaries_id');
-		echo $this->Form->input('time_parts_id');
-		echo $this->Form->input('countries_id');
-		echo $this->Form->input('users_id');
-		echo $this->Form->input('categories_id');
-		echo $this->Form->input('start_date');
-		echo $this->Form->input('end_date');
-=======
-<style type="text/css" media="screen">
-	.form-control{
-		width: 70%;
-	}
-</style>
-<div class="container">
-	<div class="posts form">
-<?php echo $this->Form->create('Post'); ?>
-	<fieldset>
-		<legend><?php echo __('Sửa bài đăng'); ?></legend>
+		<legend><?php echo __('Administrator sửa bài đăng'); ?></legend>
 	<?php
 		echo $this->Form->input('title', array('label' => 'Tiêu đề', 'class' => 'form-control'));
 		echo $this->Form->input('content', array('label' => 'Nội dung', 'class' => 'form-control'));
-		echo "<label>Chọn lương</label>";
-		echo '<select name="data[Post][salaries_id]" class="form-control" id="PostSalariesId" required="required">';
-		if(0 < count($salaries)){
-			foreach ($salaries as $key => $value) {
-				echo '<option value="'. $value['Salaries']['id']  .'">' . $value['Salaries']['salaries'] . '</option>';
-			}
-		}
-		echo '</select>';
-		
-		echo $this->Form->input('time_parts_id', array('label' => 'Loại thời gian', 'class' => 'form-control'));
-		echo $this->Form->input('countries_id', array('label' => 'Thành phố', 'class' => 'form-control'));
-		
+		echo $this->Form->input('salaries_id', array('label' => 'Mã lương', 'class' => 'form-control'));
+		echo $this->Form->input('time_parts_id', array('label' => 'Mã khung giờ', 'class' => 'form-control'));
+		echo $this->Form->input('countries_id', array('label' => 'Mã thành phố', 'class' => 'form-control'));
 		echo $this->Form->input('users_id', array('label' => 'Mã người dùng', 'class' => 'form-control'));
-		echo $this->Form->input('categories_id', array('label' => 'Tên danh mục', 'class' => 'form-control'));
-		echo "<label>Ngày đăng</label>";
-		echo $this->Form->input('start_date', array('class' => 'col-md-1')); 
-		echo "<label>Ngày hết hạn</label>";
-		echo $this->Form->input('end_date', array( 'class' => 'col-md-1'));
->>>>>>> 1dee8433ba3ebef593bf73cd800601233d3e6f8d
+		echo $this->Form->input('categories_id', array('label' => 'Mã danh mục', 'class' => 'form-control'));
+		echo $this->Form->input('start_date', array('label' => 'Ngày tạo', 'class' => 'form-control'));
+		echo $this->Form->input('end_date', array('label' => 'Ngày hết hạn', 'class' => 'form-control'));
 	?>
+	</fieldset>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit')); ?>
 </div>
@@ -69,8 +35,3 @@
 		<li><?php echo $this->Html->link(__('New Categories'), array('controller' => 'categories', 'action' => 'add')); ?> </li>
 	</ul>
 </div>
-<<<<<<< HEAD
-=======
-
-</div>
->>>>>>> 1dee8433ba3ebef593bf73cd800601233d3e6f8d

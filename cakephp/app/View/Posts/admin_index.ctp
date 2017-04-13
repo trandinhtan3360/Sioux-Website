@@ -1,11 +1,6 @@
 <div class="posts index">
-<<<<<<< HEAD
 	<h2><?php echo __('Posts'); ?></h2>
-	<table cellpadding="0" cellspacing="0">
-=======
-	<h2><?php echo __('Bài đăng'); ?></h2>
-	<table cellpadding="0" cellspacing="0" class="table table-hover table-bordered">
->>>>>>> 1dee8433ba3ebef593bf73cd800601233d3e6f8d
+	<table cellpadding="0" cellspacing="0" class='table table-hover table-bodered'>
 	<thead>
 	<tr>
 			<th><?php echo $this->Paginator->sort('id'); ?></th>
@@ -44,17 +39,10 @@
 		</td>
 		<td><?php echo h($post['Post']['start_date']); ?>&nbsp;</td>
 		<td><?php echo h($post['Post']['end_date']); ?>&nbsp;</td>
-<<<<<<< HEAD
 		<td class="actions">
 			<?php echo $this->Html->link(__('View'), array('action' => 'view', $post['Post']['id'])); ?>
 			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $post['Post']['id'])); ?>
 			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $post['Post']['id']), array('confirm' => __('Are you sure you want to delete # %s?', $post['Post']['id']))); ?>
-=======
-		<td class="actions" style="width: 300px;">
-			<?php echo $this->Html->link(__('View'), array('action' => 'view', $post['Post']['id']), array('class' => 'btn btn-primary')); ?>
-			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $post['Post']['id']), array('class' => 'btn btn-primary')); ?>
-			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $post['Post']['id']), array('class' => 'btn btn-danger'), array('confirm' => __('Are you sure you want to delete # %s?', $post['Post']['id']))); ?>
->>>>>>> 1dee8433ba3ebef593bf73cd800601233d3e6f8d
 		</td>
 	</tr>
 <?php endforeach; ?>

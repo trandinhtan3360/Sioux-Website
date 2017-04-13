@@ -1,56 +1,46 @@
-<<<<<<< HEAD
-<style type="text/css" media="screen">
-	td {
-		width: 150px;
-		padding: 15px;
-		border: 1px solid black;
-	}
-</style>
-<?php echo $this->Html->script('bootstrap'); ?>
-<div class="container">
-	<div class="posts view">
+<div class="posts view">
 <h2><?php echo __('Post'); ?></h2>
-<div class="">
-	<h2><?php echo h($post['Post']['title']); ?>
-			&nbsp;</h2>
-	<div class="container">
-		<div class="col-md-4">
-			<table class="" style="padding: 15px;">
-			<h2>POST SUMMARY</h2>
-				<tbody>
-					<tr>
-					<td>Đăng vào ngày</td>
-					<td><?php echo h($post['Post']['start_date']); ?>
-					&nbsp;</td>
-					</tr>
-					<tr>
-					<td>Danh mục</td>
-		             <td><?php echo $this->Html->link($post['Categories']['name'], array('controller' => 'categories', 'action' => 'view', $post['Categories']['id'])); ?>
-					&nbsp;</td>
-		            </tr>
-		            <tr>
-		            <td>Lương</td>
-		            <td><?php echo $this->Html->link($post['Salaries']['salaries'], array('controller' => 'salaries', 'action' => 'view', $post['Salaries']['id'])); ?>
-					&nbsp;</td>
-
-					</tr>
-				</tbody>
-			</table>
-		</div>
-		<div class="col-md-8">
-			<h2>JOB DESCRIPTION</h2>
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<th>Id</th>
+			<th>Tiêu đề</th>
+			<th>Nội dung</th>
+			<th>Mã lương</th>
+			<th>Mã thời gian</th>
+			<th>Mã thành phố</th>
+			<th>Mã người dùng</th>
+			<th>Mã danh mục</th>
+			<th>Ngày tạo</th>
+			<th>Ngày kết thúc</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><?php echo h($post['Post']['id']); ?>
+			&nbsp;
+			</td>
 			<td><?php echo h($post['Post']['title']); ?>
 			&nbsp;</td>
-	        <?php echo h($post['Post']['content']); ?>
-			&nbsp;
-			<td><?php echo $this->Html->link($post['TimeParts']['type'], array('controller' => 'time_parts', 'action' => 'view', $post['TimeParts']['id'])); ?>
+			<td><?php echo ($post['Post']['content']); ?>
 			&nbsp;</td>
-			<td><?php echo $this->Html->link($post['Countries']['city'], array('controller' => 'countries', 'action' => 'view', $post['Countries']['id'])); ?>
+			<td><?php echo $this->Html->link($post['Salaries']['id'], array('controller' => 'salaries', 'action' => 'view', $post['Salaries']['id'])); ?>
 			&nbsp;</td>
-		</div>
-	</div>
-
-</div>
+			<td><?php echo $this->Html->link($post['TimeParts']['id'], array('controller' => 'time_parts', 'action' => 'view', $post['TimeParts']['id'])); ?>
+			&nbsp;</td>
+			<td><?php echo $this->Html->link($post['Countries']['id'], array('controller' => 'countries', 'action' => 'view', $post['Countries']['id'])); ?>
+			&nbsp;</td>
+			<td><?php echo $this->Html->link($post['Users']['id'], array('controller' => 'users', 'action' => 'view', $post['Users']['id'])); ?>
+			&nbsp;</td>
+			<td><?php echo $this->Html->link($post['Categories']['name'], array('controller' => 'categories', 'action' => 'view', $post['Categories']['id'])); ?>
+			&nbsp;</td>
+			<td><?php echo h($post['Post']['start_date']); ?>
+			&nbsp;</td>
+			<td><?php echo h($post['Post']['end_date']); ?>
+			&nbsp;</td>
+		</tr>
+	</tbody>
+</table>
 	<!-- <dl>
 		<dt><?php echo __('Id'); ?></dt>
 		<dd>
@@ -64,7 +54,7 @@
 		</dd>
 		<dt><?php echo __('Content'); ?></dt>
 		<dd>
-			<?php echo h($post['Post']['content']); ?>
+			<?php echo ($post['Post']['content']); ?>
 			&nbsp;
 		</dd>
 		<dt><?php echo __('Salaries'); ?></dt>
@@ -104,54 +94,7 @@
 		</dd>
 	</dl> -->
 </div>
-<!-- <div class="actions">
-=======
-<div class="posts view">
-<h2><?php echo __('Bài đăng'); ?></h2>
-	<table class="table table-bordered">
-		<thead>
-			<tr>
-				<th>Id</th>
-				<th>Tiêu đề</th>
-				<th>Nội dung</th>
-				<th>Mã lương</th>
-				<th>Mã thời gian</th>
-				<th>Mã thành phố</th>
-				<th>Mã người dùng</th>
-				<th>Mã danh mục</th>
-				<th>Ngày tạo</th>
-				<th>Ngày hết hạn</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<td><?php echo h($post['Post']['id']); ?>
-			&nbsp;</td>
-			<td><?php echo h($post['Post']['title']); ?>
-			&nbsp;</td>
-			<td><?php echo h($post['Post']['content']); ?>
-			&nbsp;</td>
-			<td><?php echo $this->Html->link($post['Salaries']['id'], array('controller' => 'salaries', 'action' => 'view', $post['Salaries']['id'])); ?>
-			&nbsp;</td>
-			<td><?php echo $this->Html->link($post['TimeParts']['id'], array('controller' => 'time_parts', 'action' => 'view', $post['TimeParts']['id'])); ?>
-			&nbsp;</td>
-			<td><?php echo $this->Html->link($post['TimeParts']['id'], array('controller' => 'time_parts', 'action' => 'view', $post['TimeParts']['id'])); ?>
-			&nbsp;</td>
-			<td><?php echo $this->Html->link($post['Countries']['id'], array('controller' => 'countries', 'action' => 'view', $post['Countries']['id'])); ?>
-			&nbsp;</td>
-			<td><?php echo $this->Html->link($post['Users']['id'], array('controller' => 'users', 'action' => 'view', $post['Users']['id'])); ?>
-			&nbsp;</td>
-			<td><?php echo h($post['Post']['start_date']); ?>
-			&nbsp;</td>
-			<td><?php echo h($post['Post']['end_date']); ?>
-			&nbsp;</td>
-			</tr>
-		</tbody>
-	</table>
-	
-</div>
 <div class="actions">
->>>>>>> 1dee8433ba3ebef593bf73cd800601233d3e6f8d
 	<h3><?php echo __('Actions'); ?></h3>
 	<ul>
 		<li><?php echo $this->Html->link(__('Edit Post'), array('action' => 'edit', $post['Post']['id'])); ?> </li>
@@ -169,10 +112,4 @@
 		<li><?php echo $this->Html->link(__('List Categories'), array('controller' => 'categories', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Categories'), array('controller' => 'categories', 'action' => 'add')); ?> </li>
 	</ul>
-<<<<<<< HEAD
-</div> -->
-
 </div>
-=======
-</div>
->>>>>>> 1dee8433ba3ebef593bf73cd800601233d3e6f8d
