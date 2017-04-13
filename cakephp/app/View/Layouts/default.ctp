@@ -22,10 +22,12 @@
 		
 		echo $this->Html->css('flexslider');
 		echo $this->Html->script('bootstrap');
-		echo $this->Html->script('jquery.prettyPhoto');
+		//echo $this->Html->script('jquery.prettyPhoto');
 		echo $this->Html->script('jquery.flexslider');
 		echo $this->Html->script('jquery.custom');
-		
+
+    	echo $this->Html->css('style');
+
 		echo $this->Html->css('bootstrap-responsive');
 		
 	?>
@@ -66,7 +68,7 @@ $(document).ready(function () {
 		<div id="header">
 		<?php echo $this->element('header'); ?>		
 		</div>
-		<div id="content">
+		<div >
 
 			<?php echo $this->Flash->render(); ?>
 

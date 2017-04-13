@@ -1,44 +1,60 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title> Display Amin with role is 0</title>
-</head>
-<body>
-<?php
-if($data==NULL){
-	echo "Data empty";
-}
-else{
-      echo "<table>
-       <tr>
-       <td>id</td>
-       <td>full_name</td>
-       <td>username</td>
-       <td>password</td>
-       <td>email</td>
-       <td>address</td>
-       <td>dob</td>
-       <td>phone</td>
-       <td>image</td>
-       <td>Description</td>
-       <td>status</td>
-       </tr>";
-       echo "<tr>";
-       foreach($data as $item){
-       echo "<td>".$item['users']['id']."</td>";
-       echo "<td>".$item['users']['full_name']."</td>";
-       echo "<td>".$item['users']['username']."</td>";
-       echo "<td>".$item['users']['password']."</td>";
-       echo "<td>".$item['users']['email']."</td>";
-       echo "<td>".$item['users']['address']."</td>";
-       echo "<td>".$item['users']['dob']."</td>";
-       echo "<td>".$item['users']['phone']."</td>";
-       echo "<td>".$item['users']['image']."</td>";
-       echo "<td>".$item['users']['description']."</td>";
-       echo "<td>".$item['users']['status']."</td>";
-       echo "</tr>";
-     }
-     }
-?>
-</body>
-</html>
+<div class="users view">
+<table  class="table table-striped table-advance table-hover">
+	<caption><h2><?php echo __('User'); ?></h2></caption>
+	<thead>
+		<tr>
+			<th><dt><?php echo __('Id'); ?></dt></th>
+			<th><dt><?php echo __('Full Name'); ?></dt></th>
+			<th><dt><?php echo __('Username'); ?></dt></th>
+			<th><dt><?php echo __('Password'); ?></dt></th>
+			<th><dt><?php echo __('Email'); ?></dt></th>
+			<th><dt><?php echo __('Address'); ?></dt></th>
+			<th><dt><?php echo __('Dob'); ?></dt></th>
+			<th><dt><?php echo __('Phone'); ?></dt></th>
+			<th><dt><?php echo __('Image'); ?></dt></th>
+			<th><dt><?php echo __('Description'); ?></dt></th>
+			<th><dt><?php echo __('Role'); ?></dt></th>
+			<th><dt><?php echo __('Status'); ?></dt></th>
+
+		</tr>
+	</thead>	
+	<tbody>
+		<tr>
+			<td><?php echo h($user['User']['id']); ?>
+			&nbsp;</td>
+			<Td><?php echo h($user['User']['full_name']); ?>
+			&nbsp;</Td>
+			<td><?php echo h($user['User']['username']); ?>
+			&nbsp;</td>
+			<td><?php echo h($user['User']['password']); ?>
+			&nbsp;</td>
+			<td><?php echo h($user['User']['email']); ?>
+			&nbsp;</td>
+			<td><?php echo h($user['User']['address']); ?>
+			&nbsp;</td>
+			<td><?php echo h($user['User']['dob']); ?>
+			&nbsp;</td>
+			<td><?php echo h($user['User']['phone']); ?>
+			&nbsp;</td>
+			<td><?php echo h($user['User']['image']); ?>
+			&nbsp;</td>
+			<td><?php echo h($user['User']['description']); ?>
+			&nbsp;</td>
+			<td><?php echo h($user['User']['role']); ?>
+			&nbsp;</td>
+			<td><?php echo h($user['User']['status']); ?>
+			&nbsp;</td>
+		</tr>
+		<tr>
+	</tbody>
+</table>
+</div>
+<div class="actions">
+	<h3><?php echo __('Actions'); ?></h3>
+	<ul>
+		<li><?php echo $this->Html->link(__('Edit User'), array('action' => 'edit', $user['User']['id'])); ?> </li>
+		<li><?php echo $this->Form->postLink(__('Delete User'), array('action' => 'delete', $user['User']['id']), array('confirm' => __('Are you sure you want to delete # %s?', $user['User']['id']))); ?> </li>
+		<li><?php echo $this->Html->link(__('List Users'), array('action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('New User'), array('action' => 'add')); ?> </li>
+	</ul>
+</div>
