@@ -105,8 +105,8 @@ class Post extends AppModel {
 			),
 		),
 		'start_date' => array(
-			'datetime' => array(
-				'rule' => array('datetime'),
+			'date' => array(
+				'rule' => array('date'),
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
@@ -115,8 +115,8 @@ class Post extends AppModel {
 			),
 		),
 		'end_date' => array(
-			'datetime' => array(
-				'rule' => array('datetime'),
+			'' => array(
+				'rule' => array(''),
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
@@ -125,8 +125,8 @@ class Post extends AppModel {
 			),
 		),
 		'created' => array(
-			'datetime' => array(
-				'rule' => array('datetime'),
+			'date' => array(
+				'rule' => array('date'),
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,

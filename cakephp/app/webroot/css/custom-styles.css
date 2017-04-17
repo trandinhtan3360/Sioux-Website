@@ -600,18 +600,7 @@ ul.post-data li:last-child {padding-right: 0px;}
 .popular-posts li em {font-family:Georgia, "Times New Roman", Times, serif;}
 p.side {margin-bottom: 20px;}
 
-/* Mobile Portrait and Landscape Size */
-@media only screen and (max-width: 479px) {
-	iframe {width:270px;}
-}
-/* Tablet */
-@media (min-width: 768px) and (max-width: 979px) {
-	iframe {width:230px;}
-}
-/* Small Desktop Size */
-@media (min-width: 980px) and (max-width: 1199px) {
-	iframe {width:300px;}
-}
+
 
 
 /**************************************

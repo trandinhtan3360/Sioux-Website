@@ -47,12 +47,8 @@ echo $this->html->script('tinymce/tinymce.min');
 		
 		echo $this->Form->input('time_parts_id', array('label' => 'Loại thời gian', 'class' => 'form-control'));
 		echo $this->Form->input('countries_id', array('label' => 'Thành phố', 'class' => 'form-control'));
-		
-		echo $this->Form->input('users_id', array('label' => 'Mã người dùng', 'class' => 'form-control'));
-		echo $this->Form->input('categories_id', array('label' => 'Tên danh mục', 'class' => 'form-control'));
-		echo $this->Form->input('start_date',array('type' =>'text' ,'div'=>false, 'class' => 'datepicker')); 
-		echo $this->Form->input('end_date',array('type' =>'text' ,'div'=>false,'class'=>'form-control', 'class' => 'datepicker')); 
-		echo $this->Form->input('created',array('type' =>'text' ,'div'=>false,'class'=>'form-control', 'class' => 'datepicker')); 
+		echo $this->Form->input('categories_id', array('label' => 'Tên danh mục', 'class' => 'form-control')); 
+		echo $this->Form->input('end_date',array('type' =>'text' ,'div'=>false,'class'=>'form-control', 'class' => 'datepicker'));
 
 		// echo "<label>Ngày hết hạn</label>";
 		// echo $this->Form->input('end_date', array( 'class' => 'col-md-1'));

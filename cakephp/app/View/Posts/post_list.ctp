@@ -1,18 +1,43 @@
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<?php echo $this->Html->css('bootstrap.min.css'); ?>
+<style type="text/css" media="screen">
+	.span5 {
+		width: 0px;
+	}
+	.featured-job {
+		background: #fff;
+	}
+	.featured-job-content:hover{
+		color: #fff;
+		background: #2da5be;
+	}
+	.featured-job-content a:hover{
+		color: #fff;
+		background: #2da5be;
+	}
+	.featured-job-content ul{
+		list-style: none;
+		padding: 0px;
+		margin: 0px;
+	}
+	.featured-job-content ul li {
+		display: inline;
+	}
+	.label-success {
+		position: relative;
+		left: 645px;
+		bottom: 103px;
+		padding: 6px;
+	}
+	strong {
+		color: ;
+	}
+</style>
 <div class="container">
 	<div class="row">
 		<div class="col-md-9 col-sm-8">
 			<div class="content featured-jobs">
 				<h2><span class="wc-editable" data-pk="ws_featured_jobs" data-type="text">Featured Jobs</span></h2>
 
-				
 				<?php
 				$posts = $this->requestAction('posts/');
 				foreach ($posts as $post)
@@ -28,12 +53,12 @@
 							<div class="col-md-10 col-sm-9 featured-job-content">
 							<h3><?php echo $this->Html->link($post['Post']['title'], array('controller' => 'posts', 'action' => 'view', $post['Post']['id'])); ?></h3>
 
-								<p class="job-category">Protective Services Jobs</p>
+								<span class="wc-editable" data-pk="front_label_company_name" data-type="text">Người đăng</span>: <strong><?php echo h($post['Users']['full_name']); ?></strong>
 
 								<ul>
-									<li><span class="wc-editable" data-pk="front_post_on" data-type="text">Posted on</span>: <strong><?php echo h($post['Post']['start_date']); ?>
+									<li><span class="wc-editable" data-pk="front_post_on" data-type="text">Ngày đăng</span>: <strong><?php echo h($post['Post']['start_date']); ?>
 										&nbsp;</strong></li>
-										<li><span class="wc-editable" data-pk="front_label_company_name" data-type="text">Company name</span>: <strong>Cannon Guards Security Ltd</strong></li>
+										<li><span class="wc-editable" data-pk="front_label_company_name" data-type="text">Lương</span>: <strong><?php echo h($post['Salaries']['salaries']); ?></strong></li>
 										<li><span class="wc-editable" data-pk="front_location" data-type="text">Location</span>: <strong>
 
 										<?php echo h($post['Countries']['city']); ?></strong></li>

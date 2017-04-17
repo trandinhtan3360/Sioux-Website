@@ -78,6 +78,10 @@ public function view($id = null) {
 public function add() {
 	if ($this->request->is('post')) {
 		$this->Post->create();
+		echo '<pre>';
+		print_r($this->request->data);
+		die();
+		//2017-04-12 00:00:00
 		if ($this->Post->save($this->request->data)) {
 			$this->Flash->success(__('The post has been saved.'));
 			return $this->redirect(array('action' => 'post_successfull'));
