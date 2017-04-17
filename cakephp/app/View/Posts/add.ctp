@@ -1,6 +1,23 @@
+<?php
+echo $this->html->script('tinymce/tinymce.min');
+?>
+<script>tinymce.init({ selector:'textarea' });
+
+
+</script>
+<script>
+	$(document).ready(function() {
+    $('.datepicker').datepicker({
+        format: 'mm-dd-yyyy'
+    });
+});
+</script>
 <style type="text/css" media="screen">
 	.form-control{
 		width: 70%;
+	}
+	.mce-container-body .mce-stack-layout {
+		width: 71%;
 	}
 </style>
 <div class="container">
@@ -10,10 +27,18 @@
 		<legend><?php echo __('Thêm bài đăng'); ?></legend>
 	<?php
 		echo $this->Form->input('title', array('label' => 'Tiêu đề', 'class' => 'form-control'));
-		echo $this->Form->input('content', array('label' => 'Nội dung', 'class' => 'form-control'));
+		
+		?>
+		<div style="width: 71%">
+			<?php echo $this->Form->input('content', array('label' => 'Nội dung', 'class' => 'form-control', 'required' => false)); ?>
+		</div>
+		<?php
+
+
+
 		echo "<label>Chọn lương</label>";
 		echo '<select name="data[Post][salaries_id]" class="form-control" id="PostSalariesId" required="required">';
-		if(0 < count($salaries)){
+		if (0 < count($salaries)){
 			foreach ($salaries as $key => $value) {
 				echo '<option value="'. $value['Salaries']['id']  .'">' . $value['Salaries']['salaries'] . '</option>';
 			}
@@ -25,11 +50,17 @@
 		
 		echo $this->Form->input('users_id', array('label' => 'Mã người dùng', 'class' => 'form-control'));
 		echo $this->Form->input('categories_id', array('label' => 'Tên danh mục', 'class' => 'form-control'));
-		echo "<label>Ngày đăng</label>";
-		echo $this->Form->input('start_date', array('class' => 'col-md-1')); 
-		echo "<label>Ngày hết hạn</label>";
-		echo $this->Form->input('end_date', array( 'class' => 'col-md-1'));
+		echo $this->Form->input('start_date',array('type' =>'text' ,'div'=>false, 'class' => 'datepicker')); 
+		echo $this->Form->input('end_date',array('type' =>'text' ,'div'=>false,'class'=>'form-control', 'class' => 'datepicker')); 
+		echo $this->Form->input('created',array('type' =>'text' ,'div'=>false,'class'=>'form-control', 'class' => 'datepicker')); 
+
+		// echo "<label>Ngày hết hạn</label>";
+		// echo $this->Form->input('end_date', array( 'class' => 'col-md-1'));
+		// echo "<label>Ngày tạo</label>";
+		// echo $this->Form->input('created', array( 'class' => 'col-md-1'));
+
 	?>
+</div>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit')); ?>
 </div>

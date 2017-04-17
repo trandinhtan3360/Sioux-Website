@@ -65,8 +65,8 @@ class Post extends AppModel {
 			),
 		),
 		'time_parts_id' => array(
-			'numeric' => array(
-				'rule' => array('numeric'),
+			'notBlank' => array(
+				'rule' => array('notBlank'),
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
@@ -75,8 +75,8 @@ class Post extends AppModel {
 			),
 		),
 		'countries_id' => array(
-			'numeric' => array(
-				'rule' => array('numeric'),
+			'notBlank' => array(
+				'rule' => array('notBlank'),
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
@@ -115,6 +115,16 @@ class Post extends AppModel {
 			),
 		),
 		'end_date' => array(
+			'datetime' => array(
+				'rule' => array('datetime'),
+				//'message' => 'Your custom message here',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			),
+		),
+		'created' => array(
 			'datetime' => array(
 				'rule' => array('datetime'),
 				//'message' => 'Your custom message here',

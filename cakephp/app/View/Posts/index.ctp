@@ -17,22 +17,23 @@
 	</tr>
 	</thead>
 	<tbody>
-	<?php foreach ($posts as $post): ?>
+	<?php 
+	foreach ($posts as $post): ?>
 	<tr>
 		<td><?php echo h($post['Post']['id']); ?>&nbsp;</td>
 		<td><?php echo h($post['Post']['title']); ?>&nbsp;</td>
-		<td><?php echo h($post['Post']['content']); ?>&nbsp;</td>
+		<td><?php echo ($post['Post']['content']); ?>&nbsp;</td>
 		<td>
-			<?php echo $this->Html->link($post['Salaries']['id'], array('controller' => 'salaries', 'action' => 'view', $post['Salaries']['id'])); ?>
+			<?php echo $this->Html->link($post['Salaries']['salaries'], array('controller' => 'salaries', 'action' => 'view', $post['Salaries']['id'])); ?>
 		</td>
 		<td>
-			<?php echo $this->Html->link($post['TimeParts']['id'], array('controller' => 'time_parts', 'action' => 'view', $post['TimeParts']['id'])); ?>
+			<?php echo $this->Html->link($post['TimeParts']['type'], array('controller' => 'time_parts', 'action' => 'view', $post['TimeParts']['id'])); ?>
 		</td>
 		<td>
-			<?php echo $this->Html->link($post['Countries']['id'], array('controller' => 'countries', 'action' => 'view', $post['Countries']['id'])); ?>
+			<?php echo $this->Html->link($post['Countries']['city'], array('controller' => 'countries', 'action' => 'view', $post['Countries']['id'])); ?>
 		</td>
 		<td>
-			<?php echo $this->Html->link($post['Users']['id'], array('controller' => 'users', 'action' => 'view', $post['Users']['id'])); ?>
+			<?php echo $this->Html->link($post['Users']['full_name'], array('controller' => 'users', 'action' => 'view', $post['Users']['id'])); ?>
 		</td>
 		<td>
 			<?php echo $this->Html->link($post['Categories']['name'], array('controller' => 'categories', 'action' => 'view', $post['Categories']['id'])); ?>
