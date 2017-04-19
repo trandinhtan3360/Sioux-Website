@@ -23,9 +23,14 @@ class CountriesController extends AppController {
  * @return void
  */
 	public function index() {
-		$this->Country->recursive = 0;
-		$this->set('countries', $this->Paginator->paginate());
+		$Countries = $this->Country->find('all');
+        if (!empty($this->request->params['requested'])) {
+            return $Countries;
+        }
+        $this->set('Countries', $Countries);
 	}
+
+	
 
 /**
  * view method

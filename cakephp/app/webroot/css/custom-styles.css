@@ -108,6 +108,14 @@ blockquote.pull-right {border-right: 5px solid #999;}
     margin-top: 10px;
     width: 445px;
 }
+
+@media (min-width: 375px){
+	#form-buscar >.form-group >.input-group > .form-control {
+	    height: 33px;
+	    margin-top: 10px;
+	    width: 236px;
+	}
+}
 #form-buscar >.form-group >.input-group > .input-group-btn > .btn{
         height: 49px; 
         font-size: 16px;
@@ -117,7 +125,6 @@ blockquote.pull-right {border-right: 5px solid #999;}
 #form-buscar >.form-group >.input-group > .input-group-btn > .btn .glyphicon{
  margin-right:12px;   
 }    
-
 
 #form-buscar >.form-group >.input-group > .form-control {
     font-size: 16px;

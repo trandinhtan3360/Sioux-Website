@@ -18,6 +18,7 @@
 
 		//echo $this->Html->css('cake.generic');
 		echo $this->Html->css('bootstrap');
+		echo $this->Html->css('bootstrap1.min');
 		
 		echo $this->Html->css('custom-styles');		
 		echo $this->Html->css('flexslider');
@@ -65,17 +66,11 @@ $(document).ready(function () {
 </head>
 <body class="home">
 	
-		<div id="header">
-		<?php echo $this->element('header'); ?>		
-		</div>
 		<div id="content">
 
 			<?php echo $this->Flash->render(); ?>
 
 			<?php echo $this->fetch('content'); ?>
-		</div>
-		<div class="footer">
-			<?php echo $this->element('footer'); ?>
 		</div>
 	
 	

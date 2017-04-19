@@ -11,6 +11,7 @@
 			<th><?php echo $this->Paginator->sort('countries_id'); ?></th>
 			<th><?php echo $this->Paginator->sort('users_id'); ?></th>
 			<th><?php echo $this->Paginator->sort('categories_id'); ?></th>
+			<th><?php echo $this->Paginator->sort('Số điện thoại'); ?></th>
 			<th><?php echo $this->Paginator->sort('start_date'); ?></th>
 			<th><?php echo $this->Paginator->sort('end_date'); ?></th>
 			<th class="actions"><?php echo __('Actions'); ?></th>
@@ -37,7 +38,9 @@
 		<td>
 			<?php echo $this->Html->link($post['Categories']['name'], array('controller' => 'categories', 'action' => 'view', $post['Categories']['id'])); ?>
 		</td>
+		<td><?php echo h($post['Post']['phone']); ?>&nbsp;</td>
 		<td><?php echo h($post['Post']['start_date']); ?>&nbsp;</td>
+			
 		<td><?php echo h($post['Post']['end_date']); ?>&nbsp;</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('View'), array('action' => 'view', $post['Post']['id'])); ?>

@@ -1,3 +1,140 @@
+<style type="text/css" media="screen">
+    .header_login {
+
+    }
+    .header_register {
+
+    }
+</style>
+<?php
+
+        echo $this->Html->meta('icon');
+
+        echo $this->fetch('meta');
+        echo $this->fetch('css');
+        echo $this->fetch('script');
+
+        //echo $this->Html->css('cake.generic');
+        echo $this->Html->css('bootstrap');
+        echo $this->Html->css('custom-styles');
+        
+        echo $this->Html->css('flexslider');
+        echo $this->Html->script('bootstrap');
+        echo $this->Html->script('jquery.prettyPhoto');
+        echo $this->Html->script('jquery.flexslider');
+        echo $this->Html->script('jquery.custom');
+        
+        echo $this->Html->css('bootstrap-responsive');
+        
+    ?>
+    <!-- Color Bars (above header)-->
+        
+        
+        <div class="container">
+            <div class="col-lg-8">
+                
+            </div>
+            <div class="col-lg-2">
+                <div class="header_register">
+                    <a href="#" class="">Đăng ký</a>
+                </div>
+            </div>
+            <div class="col-lg-2">
+                <div class="header_login">
+                    <a href="#" class="">Đăng nhập</a>
+                </div>
+            </div>
+        </div>
+    <div class="container">
+    
+      <div class="row header"><!-- Begin Header -->
+      
+        <!-- Logo -->
+        <div class="span5 logo">
+            <a href="index.htmll"><img src="<?php echo $this->webroot.'/img/logo.jpg'; ?>" alt="" /></a>
+            <h2>Tận tâm, uy tín</h2>
+        </div>
+        
+        <!-- Main Navigation -->
+        <div class="span7 navigation">
+            <div class="navbar hidden-phone">
+            
+            <ul class="nav">
+            <li class="active"><a href="#">Trang chủ</a></li>
+            <li>
+                <a href="#">Giới thiệu</a>
+            </li>
+             <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Dịch vụ <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Giúp việc nhà</a></li>
+                    <li><a href="#">Chăm em bé</a></li>
+                    <li><a href="#">Giúp việc nhà theo giờ</a></li>
+                    <li><a href="#">Giữ em bé</a></li>
+                    <li><a href="#">Chăm người nhà</a></li>
+                </ul>
+             </li>
+             <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Tin tức <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Người giúp việc</a></li>
+                    <li><a href="#">Người tuyển dụng</a></li>
+                </ul>
+             </li>
+             <li><a href="#">Liên hệ</a></li>
+             <li><a href="<?php echo $this->webroot.'posts/add'; ?>">Đăng bài post</a></li>
+             <li></li>
+            </ul>
+           
+            </div>
+        </div>
+
+                <!-- Form Search-->
+
+        <div class="col-md-6 col-md-offset-3">     
+            <div class="row">
+                <form role="form" id="form-buscar">
+                    <div class="form-group">
+                    <div class="input-group">
+                        <input id="1" class="form-control" type="text" name="search" placeholder="Search..." required/>
+                        <span class="input-group-btn">
+                        <button class="btn btn-success" type="submit" style="height: 43px;">
+                            <i class="glyphicon glyphicon-search" aria-hidden="true"></i> Search
+                        </button>
+                        </span>
+                    </div>
+                    </div>
+                </form>
+            </div>            
+        </div>
+        
+      </div><!-- End Header -->
+     
+    <div class="row headline"><!-- Begin Headline -->
+    
+        <!-- Slider Carousel -->
+        <div class="span8">
+            <div class="flexslider">
+              <ul class="slides">
+                <li><a href="#"><img src="<?php echo $this->webroot.'/img/gallery/slide1.jpg'; ?>" alt="slider" /></a></li>
+                <li><a href="#"><img src="<?php echo $this->webroot.'/img/gallery/slide2.jpg'; ?>" alt="slider" /></a></li>
+                <li><a href="#"><img src="<?php echo $this->webroot.'/img/gallery/slide3.jpg'; ?>" alt="slider" /></a></li>
+                <li><a href="#"><img src="<?php echo $this->webroot.'/img/gallery/slide5.jpg'; ?>" alt="slider" /></a></li>
+              </ul>
+            </div>
+        </div>
+        
+        <!-- Headline Text -->
+        <div class="span4">
+            <h3>Welcome to Wonder. <br />
+            Dịch vụ giúp việc.</h3>
+            <p class="lead">Toàn thời gian.</p>
+            <p class="lead">Bán thời gian.</p>
+            <a href="#"><i class="icon-plus-sign"></i>Read More</a> 
+        </div>
+    </div><!-- End Headline -->
+
+
 <div class="container">
 
 <div id="content">
@@ -193,7 +330,13 @@
             </h5>
 
         <div id="blogCarousel" class="carousel slide ">
+        <?php 
+            $posts = $this->requestAction('posts/');
+            foreach ($posts as $post)
 
+                    {
+
+         ?>
             <!-- Carousel items -->
             <div class="carousel-inner">
 
@@ -201,19 +344,26 @@
                 <div class="active item">
                     <a href="blog-single.html"><img src="img/gallery/blog1.jpg" alt="" class="align-left blog-thumb-preview" /></a>
                     <div class="post-info clearfix">
-                        <h4><a href="blog-single.html">Hiển thị bài Post</a></h4>
+                        <h4><a href="blog-single.html"><?php echo $this->Html->link($post['Post']['title'], array('controller' => 'posts', 'action' => 'view', $post['Post']['id'])); ?></a></h4>
                         <ul class="blog-details-preview">
-                            <li><i class="icon-calendar"></i><strong>Posted on:</strong> Sept 4, 2015<li>
-                            <li><i class="icon-user"></i><strong>Posted by:</strong> <a href="#" title="Link">Admin</a><li>
-                            <li><i class="icon-comment"></i><strong>Comments:</strong> <a href="#" title="Link">12</a><li>
-                            <li><i class="icon-tags"></i> <a href="#">photoshop</a>, <a href="#">tutorials</a>, <a href="#">illustration</a>
+                            <li><i class="icon-calendar"></i><strong>Posted on:</strong> <?php echo h($post['Post']['start_date']); ?>
+                                        &nbsp;<li>
+                            <li><i class="icon-calendar"></i><strong>Hết hạn:</strong> <?php echo h($post['Post']['end_date']); ?>
+                                        &nbsp;<li>
+                            <li><i class="icon-user"></i><strong>Posted by:</strong> <a href="#" title="Link"><?php echo h($post['Users']['full_name']); ?></a><li>
+                            <!-- <li><i class="icon-comment"></i><strong>Comments:</strong> <a href="#" title="Link">12</a><li>
+                            <li><i class="icon-tags"></i> <a href="#">photoshop</a>, <a href="#">tutorials</a>, <a href="#">illustration</a></li> -->
                         </ul>
                     </div>
                     <p class="blog-summary">Hiển thị thông tin của bài Post. <a href="#">Read more</a><p>
                 </div>
             </div>
+
+        <?php 
+        } ?>
             </div>  
         </div>
+
         <!-- Blog Preview -->
         <div class="span6">
 
@@ -225,27 +375,97 @@
 
         <div id="blogCarousel" class="carousel slide ">
 
+            <?php 
+            $posts = $this->requestAction('posts/post_part_time');
+            foreach ($posts as $post)
+
+                    {
+
+         ?>
             <!-- Carousel items -->
             <div class="carousel-inner">
 
                  <!-- Blog Item 1 -->
                 <div class="active item">
-                    <a href="blog-single.html"><img src="img/gallery/blog2.jpg" alt="" class="align-left blog-thumb-preview" /></a>
+                    <a href="blog-single.html"><img src="img/gallery/blog1.jpg" alt="" class="align-left blog-thumb-preview" /></a>
                     <div class="post-info clearfix">
-                        <h4><a href="blog-single.html">Hiển thị bài Posts</a></h4>
+                        <h4><a href="blog-single.html"><?php echo $this->Html->link($post['Post']['title'], array('controller' => 'posts', 'action' => 'view', $post['Post']['id'])); ?></a></h4>
                         <ul class="blog-details-preview">
-                            <li><i class="icon-calendar"></i><strong>Posted on:</strong> Sept 4, 2015<li>
-                            <li><i class="icon-user"></i><strong>Posted by:</strong> <a href="#" title="Link">Admin</a><li>
-                            <li><i class="icon-comment"></i><strong>Comments:</strong> <a href="#" title="Link">12</a><li>
-                            <li><i class="icon-tags"></i> <a href="#">photoshop</a>, <a href="#">tutorials</a>, <a href="#">illustration</a>
+                            <li><i class="icon-calendar"></i><strong>Posted on:</strong> <?php echo h($post['Post']['end_date']); ?>
+                                        &nbsp;<li>
+                            <li><i class="icon-user"></i><strong>Posted by:</strong> <a href="#" title="Link"><?php echo h($post['Users']['full_name']); ?></a><li>
+                            <!-- <li><i class="icon-comment"></i><strong>Comments:</strong> <a href="#" title="Link">12</a><li>
+                            <li><i class="icon-tags"></i> <a href="#">photoshop</a>, <a href="#">tutorials</a>, <a href="#">illustration</a></li> -->
                         </ul>
                     </div>
                     <p class="blog-summary">Hiển thị thông tin của bài Post. <a href="#">Read more</a><p>
                 </div>
             </div>
+
+        <?php } ?>
             </div>  
         </div>
-        
     </div><!-- End Bottom Section -->
     </div>    
 </div>
+
+    <div class="footer-container"><!-- Begin Footer -->
+
+        <div class="container">
+            <div class="row footer-row">
+                <div class="span4 footer-col">
+                    <h5>Về chúng tôi</h5>
+                   <img src="<?php echo $this->webroot.'/img/logo.jpg'; ?>" alt="wonder" /><br /><br />
+                    <ul class="social-icons">
+                        <li><a href="#" class="social-icon facebook"></a></li>
+                        <li><a href="#" class="social-icon twitter"></a></li>
+                        <li><a href="#" class="social-icon dribble"></a></li>
+                        <li><a href="#" class="social-icon rss"></a></li>
+                        <li><a href="#" class="social-icon forrst"></a></li>
+                    </ul>
+                    </div>
+                <div class="span4 footer-col">
+                    <h5>Hiển thị bài Post nổi bật</h5>
+                     <ul class="post-list">
+                        <li><a href="#">Thông tin bài Post nổi bật</a></li>
+                        <li><a href="#">Thông tin bài Post nổi bật</a></li>
+                        <li><a href="#">Thông tin bài Post nổi bật</a></li>
+                        <li><a href="#">Thông tin bài Post nổi bật</a></li>
+                        <li><a href="#">Thông tin bài Post nổi bật</a></li>
+                    </ul>
+                </div>
+                <div class="span4 footer-col">
+                    <h5>Hình ảnh liên quan</h5>
+                    <ul class="img-feed">
+                        <li><a href="#"><img src="<?php echo $this->webroot.'/img/gallery/flickr-img-1.jpg'; ?>" alt="Image Feed"></a></li>
+                        <li><a href="#"><img src="<?php echo $this->webroot.'/img/gallery/flickr-img-1.jpg'; ?>" alt="Image Feed"></a></li>
+                        <li><a href="#"><img src="<?php echo $this->webroot.'/img/gallery/flickr-img-1.jpg'; ?>" alt="Image Feed"></a></li>
+                        <li><a href="#"><img src="<?php echo $this->webroot.'/img/gallery/flickr-img-1.jpg'; ?>" alt="Image Feed"></a></li>
+                        <li><a href="#"><img src="<?php echo $this->webroot.'/img/gallery/flickr-img-1.jpg'; ?>" alt="Image Feed"></a></li>
+                        <li><a href="#"><img src="<?php echo $this->webroot.'/img/gallery/flickr-img-1.jpg'; ?>" alt="Image Feed"></a></li>
+                        <li><a href="#"><img src="<?php echo $this->webroot.'/img/gallery/flickr-img-1.jpg'; ?>" alt="Image Feed"></a></li>
+                        <li><a href="#"><img src="<?php echo $this->webroot.'/img/gallery/flickr-img-1.jpg'; ?>" alt="Image Feed"></a></li>
+                        <li><a href="#"><img src="<?php echo $this->webroot.'/img/gallery/flickr-img-1.jpg'; ?>" alt="Image Feed"></a></li>
+                        <li><a href="#"><img src="<?php echo $this->webroot.'/img/gallery/flickr-img-1.jpg'; ?>" alt="Image Feed"></a></li>
+                    </ul>
+                </div>
+            </div>
+       
+            <div class="row"><!-- Begin Sub Footer -->
+                <div class="span12 footer-col footer-sub">
+                    <div class="row no-margin">
+                        <div class="span6"><span class="left">Copyright 2017 Wonder Theme. All rights reserved.</span></div>
+                        <div class="span6">
+                            <span class="right">
+                            <a href="#">Trang chủ</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="#">Giới thiệu</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="#">Dịch vụ</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="#">Tin tức</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="#">Liên hệ</a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- End Sub Footer -->
+        </div>
+    </div><!-- End Footer --> 
+    
+    <!-- Scroll to Top -->  
+    <div id="toTop" class="hidden-phone hidden-tablet">Back to Top</div>
+    </div>

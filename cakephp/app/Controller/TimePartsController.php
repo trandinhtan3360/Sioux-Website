@@ -23,8 +23,11 @@ class TimePartsController extends AppController {
  * @return void
  */
 	public function index() {
-		$this->TimePart->recursive = 0;
-		$this->set('timeParts', $this->Paginator->paginate());
+		$timeParts = $this->TimePart->find('all');
+        if (!empty($this->request->params['requested'])) {
+            return $timeParts;
+        }
+        $this->set('timeParts', $timeParts);
 	}
 
 /**

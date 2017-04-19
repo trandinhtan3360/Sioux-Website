@@ -28,13 +28,19 @@ public $components = array('Paginator', 'Session', 'Flash');
 public function index() {
 	$this->Post->recursive = 0;
 	$this->set('posts', $this->Paginator->paginate());
-		// $this->set('contacts', $this->Contact->find('list'));
-		// $this->set('Salary', $this->Salary->find('list'));
-		// $this->set('TimePart', $this->TimePart->find('list'));
-		// $this->set('Country', $this->Country ->find('list'));
-		// $this->set('User', $this->User->find('list'));
-		// $this->set('Category', $this->Category->find('list'));
-	$Posts = $this->Post->find('all');
+
+	$Posts = $this->Post->find('all', array('conditions' => array('salaries_id' => 6), 'limit' => 1));
+        if (!empty($this->request->params['requested'])) {
+            return $Posts;
+        }
+        $this->set('Posts', $Posts);
+}
+
+public function post_part_time() {
+	$this->Post->recursive = 0;
+	$this->set('posts', $this->Paginator->paginate());
+
+	$Posts = $this->Post->find('all', array('conditions' => array('salaries_id' => 5), array('limit' => 1));
         if (!empty($this->request->params['requested'])) {
             return $Posts;
         }
@@ -45,7 +51,11 @@ public function post_list()
 {
 	$this->Post->recursive = 0;
 	$this->set('posts', $this->Paginator->paginate());
-	
+	$Posts = $this->Post->find('all');
+        if (!empty($this->request->params['requested'])) {
+            return $Posts;
+        }
+        $this->set('Posts', $Posts);
 	}
 
 
@@ -78,10 +88,7 @@ public function view($id = null) {
 public function add() {
 	if ($this->request->is('post')) {
 		$this->Post->create();
-		echo '<pre>';
-		print_r($this->request->data);
-		die();
-		//2017-04-12 00:00:00
+		// $this->request->data = date('Y-m-d H:m:s', strtotime($this->request->data["Post"]["end_date"]));
 		if ($this->Post->save($this->request->data)) {
 			$this->Flash->success(__('The post has been saved.'));
 			return $this->redirect(array('action' => 'post_successfull'));

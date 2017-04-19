@@ -1,22 +1,26 @@
 <?php
 App::uses('AppModel', 'Model');
 /**
- * Post Model
+ * User Model
  *
- * @property Salaries $Salaries
- * @property TimeParts $TimeParts
- * @property Countries $Countries
- * @property Users $Users
- * @property Categories $Categories
  */
-class Post extends AppModel {
+class User extends AppModel {
+	public $actsAs = array(
+        'Upload.Upload' => array(
+            'image' => array(
+               'thumbnailSizes' => array(
+                    'thumb' => '200x200'
+                )
+            )
+         )
+        );
 
 /**
  * Display field
  *
  * @var string
  */
-	public $displayField = 'title';
+	public $displayField = 'id';
 
 /**
  * Validation rules
@@ -25,6 +29,14 @@ class Post extends AppModel {
  */
 	public $validate = array(
 		'id' => array(
+			'notBlank' => array(
+				'rule' => array('notBlank'),
+				//'message' => 'Your custom message here',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			),
 			'numeric' => array(
 				'rule' => array('numeric'),
 				//'message' => 'Your custom message here',
@@ -34,7 +46,7 @@ class Post extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'title' => array(
+		'full_name' => array(
 			'notBlank' => array(
 				'rule' => array('notBlank'),
 				//'message' => 'Your custom message here',
@@ -44,7 +56,7 @@ class Post extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'content' => array(
+		'username' => array(
 			'notBlank' => array(
 				'rule' => array('notBlank'),
 				//'message' => 'Your custom message here',
@@ -54,17 +66,7 @@ class Post extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'salaries_id' => array(
-			'numeric' => array(
-				'rule' => array('numeric'),
-				//'message' => 'Your custom message here',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
-		),
-		'time_parts_id' => array(
+		'password' => array(
 			'notBlank' => array(
 				'rule' => array('notBlank'),
 				//'message' => 'Your custom message here',
@@ -74,7 +76,17 @@ class Post extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'countries_id' => array(
+		'email' => array(
+			'email' => array(
+				'rule' => array('email'),
+				//'message' => 'Your custom message here',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			),
+		),
+		'address' => array(
 			'notBlank' => array(
 				'rule' => array('notBlank'),
 				//'message' => 'Your custom message here',
@@ -84,9 +96,9 @@ class Post extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'users_id' => array(
-			'numeric' => array(
-				'rule' => array('numeric'),
+		'dob' => array(
+			'notBlank' => array(
+				'rule' => array('notBlank'),
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
@@ -94,9 +106,11 @@ class Post extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'categories_id' => array(
-			'numeric' => array(
-				'rule' => array('numeric'),
+		
+		
+		'description' => array(
+			'notBlank' => array(
+				'rule' => array('notBlank'),
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
@@ -104,9 +118,9 @@ class Post extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'start_date' => array(
-			'date' => array(
-				'rule' => array('date'),
+		'role' => array(
+			'notBlank' => array(
+				'rule' => array('notBlank'),
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
@@ -114,9 +128,9 @@ class Post extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'created' => array(
-			'date' => array(
-				'rule' => array('date'),
+		'status' => array(
+			'notBlank' => array(
+				'rule' => array('notBlank'),
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
@@ -124,61 +138,5 @@ class Post extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-
-		'phone' => array(
-			'numeric' => array(
-				'rule' => array('numeric'),
-				//'message' => 'Your custom message here',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
-		),
-	);
-
-	// The Associations below have been created with all possible keys, those that are not needed can be removed
-
-/**
- * belongsTo associations
- *
- * @var array
- */
-	public $belongsTo = array(
-		'Salaries' => array(
-			'className' => 'Salaries',
-			'foreignKey' => 'salaries_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
-		),
-		'TimeParts' => array(
-			'className' => 'TimeParts',
-			'foreignKey' => 'time_parts_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
-		),
-		'Countries' => array(
-			'className' => 'Countries',
-			'foreignKey' => 'countries_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
-		),
-		'Users' => array(
-			'className' => 'Users',
-			'foreignKey' => 'users_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
-		),
-		'Categories' => array(
-			'className' => 'Categories',
-			'foreignKey' => 'categories_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
-		)
 	);
 }

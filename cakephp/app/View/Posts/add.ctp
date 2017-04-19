@@ -7,7 +7,7 @@ echo $this->html->script('tinymce/tinymce.min');
 </script>
 <script>
 	$(document).ready(function() {
-    $('.datepicker').datepicker({
+    $('#datepicker').datepicker({
         format: 'mm-dd-yyyy'
     });
 });
@@ -23,6 +23,25 @@ echo $this->html->script('tinymce/tinymce.min');
 <div class="container">
 	<div class="posts form">
 	<?php echo $this->Form->create('Post'); ?>
+	<table>
+		<caption>table title and/or explanatory text</caption>
+		<thead>
+			<tr>
+				<th>header</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>data</td>
+				<td>data</td>
+				<td>data</td>
+				<td>data</td>
+				<td>data</td>
+
+
+			</tr>
+		</tbody>
+	</table>
 	<fieldset>
 		<legend><?php echo __('Thêm bài đăng'); ?></legend>
 	<?php
@@ -47,8 +66,9 @@ echo $this->html->script('tinymce/tinymce.min');
 		
 		echo $this->Form->input('time_parts_id', array('label' => 'Loại thời gian', 'class' => 'form-control'));
 		echo $this->Form->input('countries_id', array('label' => 'Thành phố', 'class' => 'form-control'));
-		echo $this->Form->input('categories_id', array('label' => 'Tên danh mục', 'class' => 'form-control')); 
-		echo $this->Form->input('end_date',array('type' =>'text' ,'div'=>false,'class'=>'form-control', 'class' => 'datepicker'));
+		echo $this->Form->input('categories_id', array('label' => 'Tên danh mục', 'class' => 'form-control'));
+		echo $this->Form->input('phone', array('label' => 'Nhập số điện thoại', 'class' => 'form-control'));
+		echo $this->Form->input('end_date',array('class'=>'form-control'));
 
 		// echo "<label>Ngày hết hạn</label>";
 		// echo $this->Form->input('end_date', array( 'class' => 'col-md-1'));
