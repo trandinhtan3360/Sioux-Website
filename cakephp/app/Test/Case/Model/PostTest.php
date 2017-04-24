@@ -13,8 +13,6 @@ class PostTest extends CakeTestCase {
  */
 	public $fixtures = array(
 		'app.post',
-		'app.salaries',
-		'app.time_parts',
 		'app.countries',
 		'app.users',
 		'app.categories'

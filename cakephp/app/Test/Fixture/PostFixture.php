@@ -13,20 +13,15 @@ class PostFixture extends CakeTestFixture {
 		'id' => array('type' => 'integer', 'null' => false, 'default' => null, 'unsigned' => false, 'key' => 'primary'),
 		'title' => array('type' => 'string', 'null' => true, 'default' => null, 'length' => 100, 'collate' => 'latin1_swedish_ci', 'charset' => 'latin1'),
 		'content' => array('type' => 'text', 'null' => true, 'default' => null, 'collate' => 'latin1_swedish_ci', 'charset' => 'latin1'),
-		'salaries_id' => array('type' => 'integer', 'null' => true, 'default' => null, 'unsigned' => false, 'key' => 'index'),
-		'time_parts_id' => array('type' => 'integer', 'null' => true, 'default' => null, 'unsigned' => false, 'key' => 'index'),
-		'countries_id' => array('type' => 'integer', 'null' => true, 'default' => null, 'unsigned' => false, 'key' => 'index'),
-		'users_id' => array('type' => 'integer', 'null' => true, 'default' => null, 'unsigned' => false, 'key' => 'index'),
-		'categories_id' => array('type' => 'integer', 'null' => true, 'default' => null, 'unsigned' => false, 'key' => 'index'),
+		'salaries_id' => array('type' => 'integer', 'null' => true, 'default' => null, 'unsigned' => false),
+		'time_parts_id' => array('type' => 'integer', 'null' => true, 'default' => null, 'unsigned' => false),
+		'countries_id' => array('type' => 'integer', 'null' => true, 'default' => null, 'unsigned' => false),
+		'users_id' => array('type' => 'integer', 'null' => true, 'default' => null, 'unsigned' => false),
+		'categories_id' => array('type' => 'integer', 'null' => true, 'default' => null, 'unsigned' => false),
 		'start_date' => array('type' => 'datetime', 'null' => true, 'default' => null),
 		'end_date' => array('type' => 'datetime', 'null' => true, 'default' => null),
 		'indexes' => array(
-			'PRIMARY' => array('column' => 'id', 'unique' => 1),
-			'salaries_id' => array('column' => 'salaries_id', 'unique' => 0),
-			'time_parts_id' => array('column' => 'time_parts_id', 'unique' => 0),
-			'countries_id' => array('column' => 'countries_id', 'unique' => 0),
-			'users_id' => array('column' => 'users_id', 'unique' => 0),
-			'categories_id' => array('column' => 'categories_id', 'unique' => 0)
+			'PRIMARY' => array('column' => 'id', 'unique' => 1)
 		),
 		'tableParameters' => array('charset' => 'latin1', 'collate' => 'latin1_swedish_ci', 'engine' => 'InnoDB')
 	);
@@ -46,8 +41,8 @@ class PostFixture extends CakeTestFixture {
 			'countries_id' => 1,
 			'users_id' => 1,
 			'categories_id' => 1,
-			'start_date' => '2017-04-07 17:57:45',
-			'end_date' => '2017-04-07 17:57:45'
+			'start_date' => '2017-04-13 10:47:58',
+			'end_date' => '2017-04-13 10:47:58'
 		),
 	);
 

@@ -3,8 +3,6 @@ App::uses('AppModel', 'Model');
 /**
  * Post Model
  *
- * @property Salaries $Salaries
- * @property TimeParts $TimeParts
  * @property Countries $Countries
  * @property Users $Users
  * @property Categories $Categories
@@ -25,8 +23,8 @@ class Post extends AppModel {
  */
 	public $validate = array(
 		'id' => array(
-			'numeric' => array(
-				'rule' => array('numeric'),
+			'notBlank' => array(
+				'rule' => array('notBlank'),
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
@@ -35,8 +33,8 @@ class Post extends AppModel {
 			),
 		),
 		'title' => array(
-			'notBlank' => array(
-				'rule' => array('notBlank'),
+			'maxLength' => array(
+				'rule' => array('maxLength'),
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
@@ -45,6 +43,16 @@ class Post extends AppModel {
 			),
 		),
 		'content' => array(
+			'maxLength' => array(
+				'rule' => array('maxLength'),
+				//'message' => 'Your custom message here',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			),
+		),
+		'salaries_id' => array(
 			'notBlank' => array(
 				'rule' => array('notBlank'),
 				//'message' => 'Your custom message here',
@@ -54,19 +62,9 @@ class Post extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'salaries_id' => array(
-			'numeric' => array(
-				'rule' => array('numeric'),
-				//'message' => 'Your custom message here',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
-		),
 		'time_parts_id' => array(
-			'numeric' => array(
-				'rule' => array('numeric'),
+			'notBlank' => array(
+				'rule' => array('notBlank'),
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
@@ -75,8 +73,8 @@ class Post extends AppModel {
 			),
 		),
 		'countries_id' => array(
-			'numeric' => array(
-				'rule' => array('numeric'),
+			'notBlank' => array(
+				'rule' => array('notBlank'),
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
@@ -85,8 +83,8 @@ class Post extends AppModel {
 			),
 		),
 		'users_id' => array(
-			'numeric' => array(
-				'rule' => array('numeric'),
+			'notBlank' => array(
+				'rule' => array('notBlank'),
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
@@ -95,8 +93,8 @@ class Post extends AppModel {
 			),
 		),
 		'categories_id' => array(
-			'numeric' => array(
-				'rule' => array('numeric'),
+			'notBlank' => array(
+				'rule' => array('notBlank'),
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
@@ -134,20 +132,6 @@ class Post extends AppModel {
  * @var array
  */
 	public $belongsTo = array(
-		'Salaries' => array(
-			'className' => 'Salaries',
-			'foreignKey' => 'salaries_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
-		),
-		'TimeParts' => array(
-			'className' => 'TimeParts',
-			'foreignKey' => 'time_parts_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
-		),
 		'Countries' => array(
 			'className' => 'Countries',
 			'foreignKey' => 'countries_id',

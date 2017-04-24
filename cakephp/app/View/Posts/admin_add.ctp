@@ -1,19 +1,17 @@
-
-
 <div class="posts form">
 <?php echo $this->Form->create('Post'); ?>
 	<fieldset>
-		<legend><?php echo __('Administrator thêm bài đăng'); ?></legend>
+		<legend><?php echo __('Admin Add Post'); ?></legend>
 	<?php
-		echo $this->Form->input('title', array('label' => 'Tiêu đề', 'class' => 'form-control'));
-		echo $this->Form->input('content', array('label' => 'Nội dung', 'class' => 'form-control'));
-		echo $this->Form->input('salaries_id', array('label' => 'Mã lương', 'class' => 'form-control'));
-		echo $this->Form->input('time_parts_id', array('label' => 'Mã khung giờ', 'class' => 'form-control'));
-		echo $this->Form->input('countries_id', array('label' => 'Mã thành phố', 'class' => 'form-control'));
-		echo $this->Form->input('users_id', array('label' => 'Mã người dùng', 'class' => 'form-control'));
-		echo $this->Form->input('categories_id', array('label' => 'Mã danh mục', 'class' => 'form-control'));
-		echo $this->Form->input('start_date', array('label' => 'Ngày tạo', 'class' => 'form-control'));
-		echo $this->Form->input('end_date', array('label' => 'Ngày hết hạn', 'class' => 'form-control'));
+		echo $this->Form->input('title');
+		echo $this->Form->input('content');
+		echo $this->Form->input('salaries_id');
+		echo $this->Form->input('time_parts_id');
+		echo $this->Form->input('countries_id');
+		echo $this->Form->input('users_id');
+		echo $this->Form->input('categories_id');
+		echo $this->Form->input('start_date');
+		echo $this->Form->input('end_date');
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit')); ?>
@@ -23,10 +21,6 @@
 	<ul>
 
 		<li><?php echo $this->Html->link(__('List Posts'), array('action' => 'index')); ?></li>
-		<li><?php echo $this->Html->link(__('List Salaries'), array('controller' => 'salaries', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Salaries'), array('controller' => 'salaries', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Time Parts'), array('controller' => 'time_parts', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Time Parts'), array('controller' => 'time_parts', 'action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Countries'), array('controller' => 'countries', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Countries'), array('controller' => 'countries', 'action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Users'), array('controller' => 'users', 'action' => 'index')); ?> </li>
