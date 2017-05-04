@@ -1,0 +1,64 @@
+.login1{
+    position: relative;
+    width: 25em;
+    height: 100%;
+  }
+  .login1 .login2{
+  background-color: white;
+  -moz-border-radius-topright: 0.25rem;
+  -webkit-border-top-right-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+  -moz-border-radius-topleft: 0.25rem;
+  -webkit-border-top-left-radius: 0.25rem;
+  border-top-left-radius: 0.25rem;
+  -moz-box-shadow: 0.2em 0em 0.6em 0.1em rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0.2em 0em 0.6em 0.1em rgba(0, 0, 0, 0.5);
+  box-shadow: 0.2em 0em 0.6em 0.1em rgba(0, 0, 0, 0.5);
+  }
+
+  .login1 .login2 .title{
+    color: #EEEEEE;
+  font-size: 2em;
+  padding-top: 3rem;
+  height: 4rem;
+  background-color: #364D5C;
+  text-align: center;
+  border: none;
+  -moz-border-radius-topright: 0.25rem;
+  -webkit-border-top-right-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+  -moz-border-radius-topleft: 0.25rem;
+  -webkit-border-top-left-radius: 0.25rem;
+  border-top-left-radius: 0.25rem;
+  }
+  .login1 .login2 form{
+  width: 25em;
+  padding-top: 1.5em;
+  padding-left: 2.5em;
+  }
+
+.login1 .login2 form fieldset{
+  width: 25em;
+  padding-top: 1em;
+  padding-left: 1.1em;
+  }
+
+  .login1 .login2 .form-login input{
+    position: relative;
+    float: left;
+    margin-bottom: 1.5em;
+    padding-left: .5em;
+    outline: 0;
+    width: 18rem;
+    height: 3.5rem;
+    font-size: 1em;
+    outline: 0;
+    box-sizing: border-box;
+    border: 0.1em solid #364D5C;
+    border-top-right-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+  }

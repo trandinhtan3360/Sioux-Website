@@ -1,0 +1,19 @@
+.sub-menu {
+	margin: 0px;
+	padding: 0px;
+  display: none;
+  position: absolute;
+  right: 2%;
+ 	background: white;
+ 	color: black;
+  width: auto;
+  padding: 10px;
+  text-align: center;
+  z-index: 1000;
+}
+#menu li:hover .sub-menu {
+  display: block;
+}
+.sub-menu li:hover {
+	border-bottom: 1px solid black
+}

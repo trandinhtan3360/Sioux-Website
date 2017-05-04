@@ -1,0 +1,90 @@
+/* --- --- */
+
+	
+/* --- --- */
+.about-us {
+	text-align:center;
+	font-size:20px;
+
+}
+@keyframes about-us {
+	0% { opacity: 0; }
+	100% { opacity: 1; }
+}
+.about-us {
+	-webkit-animation: about-us 4s ease-out;
+	animation: about-us 4s ease-out;
+}
+/* --- --- */
+.about-me {
+	width: auto;
+	height: auto;
+	text-align:center;
+	font-size:20px;
+	
+}
+.myimage{
+	width:200px;
+	height: 200px;
+	border: 0px solid;
+	border-radius: 50%;
+}
+.myimage image:before{
+	
+}
+.myimage image:hover{
+	border:6px solid #333;
+	box-shadow: 0px 0px 20px 0
+}
+/* bottom */
+.mini-menu{
+	font-size: 18px;
+	line-height: 25px;
+}
+/* bottom */
+.end-list{
+	margin: 0;
+	padding: 0px; 
+}
+.end-list li{
+	margin: 0px;
+	font-size: 15px;
+	display: inline;
+	list-style: none
+
+}
+.end-list a{
+	text-decoration: none;
+	color: white;
+}
+.end-list a:hover{
+	text-decoration: none;
+	color: black;
+	background: white;
+}
+/* ---- right --*/
+.rotate360{
+	padding: 0px; 
+}
+.rotate360 li{
+	font-size: 18px;
+	display: inline-block;
+	list-style: none
+
+}
+.rotate360 a{
+
+	padding-right:20px;
+	text-decoration: none;
+	color: white;
+}
+@keyframes rotate360 {
+	50% { transform: rotate(-180deg); }
+	
+	100% { transform: rotate(360deg); }
+}
+.rotate360 img:hover{
+	
+	animation-name: rotate360;
+	animation-duration: 1s; /* Thời gian xoay */
+}

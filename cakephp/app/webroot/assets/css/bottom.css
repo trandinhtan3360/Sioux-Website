@@ -1,0 +1,47 @@
+/* bottom */
+.end-list{
+	margin: 0;
+	padding: 0px; 
+}
+.end-list li{
+	margin: 0px;
+	font-size: 15px;
+	display: inline;
+	list-style: none
+
+}
+.end-list a{
+	text-decoration: none;
+	color: white;
+}
+.end-list a:hover{
+	text-decoration: none;
+	color: black;
+	background: white;
+}
+/* ---- right --*/
+.rotate360{
+	padding: 0px; 
+}
+.rotate360 li{
+	font-size: 18px;
+	display: inline-block;
+	list-style: none
+
+}
+.rotate360 a{
+
+	padding-right:20px;
+	text-decoration: none;
+	color: white;
+}
+@keyframes rotate360 {
+	50% { transform: rotate(-180deg); }
+	
+	100% { transform: rotate(360deg); }
+}
+.rotate360 img:hover{
+	
+	animation-name: rotate360;
+	animation-duration: 1s; /* Thời gian xoay */
+}
