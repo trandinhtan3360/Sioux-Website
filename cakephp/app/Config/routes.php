@@ -26,10 +26,16 @@
  * to use (in this case, /app/View/Pages/home.ctp)...
  */
 	Router::connect('/', array('controller' => 'pages', 'action' => 'display', 'home'));
+	Router::connect('/nguoi-giup-viec', array('controller' => 'Posts', 'action' => 'post_information'));
 /**
  * ...and connect the rest of 'Pages' controller's URLs.
  */
 	Router::connect('/pages/*', array('controller' => 'pages', 'action' => 'display'));
+	Router::connect('/login', array('controller' => 'Users', 'action' => 'login'));
+	Router::connect('/logout', array('controller' => 'Users', 'action' => 'logout'));
+	Router::connect('/register', array('controller' => 'Users', 'action' => 'register'));
+	Router::connect('/infor', array('controller' => 'Users', 'action' => 'login'));
+	Router::connect('/pages/*', array('controller' => 'Users', 'action' => 'user_view_post'));
 
 /**
  * Load all plugin routes. See the CakePlugin documentation on

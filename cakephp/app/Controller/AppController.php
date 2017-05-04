@@ -31,4 +31,27 @@ App::uses('Controller', 'Controller');
  * @link		http://book.cakephp.org/2.0/en/controllers.html#the-app-controller
  */
 class AppController extends Controller {
+
+	public function beforeFilter(){
+
+		if($this->params['admin']){
+
+			$this->layout = 'admin';
+		}
+	}
+	
+	public $helpers = array('Html');
+	
+	public $component = array('Session',
+	'Auth' => array(
+		'loginAction' => '/login',
+		'authError' => 'Bạn phải đăng nhập để dùng chức năng này',
+		'flash' => array(
+			'element' => 'default',
+			'key' => 'auth',
+			'params' => array('class' =>'alert alert-danger')
+			),
+		'loginRedirect' => '/'
+		)
+	);
 }

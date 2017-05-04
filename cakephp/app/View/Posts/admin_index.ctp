@@ -4,15 +4,17 @@
 	<thead>
 	<tr>
 			<th><?php echo $this->Paginator->sort('id'); ?></th>
-			<th><?php echo $this->Paginator->sort('title'); ?></th>
-			<th><?php echo $this->Paginator->sort('content'); ?></th>
-			<th><?php echo $this->Paginator->sort('salaries_id'); ?></th>
-			<th><?php echo $this->Paginator->sort('time_parts_id'); ?></th>
-			<th><?php echo $this->Paginator->sort('countries_id'); ?></th>
-			<th><?php echo $this->Paginator->sort('users_id'); ?></th>
-			<th><?php echo $this->Paginator->sort('categories_id'); ?></th>
+			<th><?php echo $this->Paginator->sort('Tiêu đề'); ?></th>
+			<th><?php echo $this->Paginator->sort('Nội dung'); ?></th>
+			<th><?php echo $this->Paginator->sort('Lương'); ?></th>
+			<th><?php echo $this->Paginator->sort('Loại thời gian'); ?></th>
+			<th><?php echo $this->Paginator->sort('Thành phố'); ?></th>
+			<th><?php echo $this->Paginator->sort('Người dùng'); ?></th>
+			<th><?php echo $this->Paginator->sort('Danh mục'); ?></th>
+			<th><?php echo $this->Paginator->sort('Số điện thoại'); ?></th>
 			<th><?php echo $this->Paginator->sort('start_date'); ?></th>
 			<th><?php echo $this->Paginator->sort('end_date'); ?></th>
+			<th><?php echo $this->Paginator->sort('created'); ?></th>
 			<th class="actions"><?php echo __('Actions'); ?></th>
 	</tr>
 	</thead>
@@ -23,22 +25,24 @@
 		<td><?php echo h($post['Post']['title']); ?>&nbsp;</td>
 		<td><?php echo h($post['Post']['content']); ?>&nbsp;</td>
 		<td>
-			<?php echo $this->Html->link($post['Salaries']['id'], array('controller' => 'salaries', 'action' => 'view', $post['Salaries']['id'])); ?>
+			<?php echo $this->Html->link($post['Salaries']['salaries'], array('controller' => 'salaries', 'action' => 'view', $post['Salaries']['id'])); ?>
 		</td>
 		<td>
-			<?php echo $this->Html->link($post['TimeParts']['id'], array('controller' => 'time_parts', 'action' => 'view', $post['TimeParts']['id'])); ?>
+			<?php echo $this->Html->link($post['TimeParts']['type'], array('controller' => 'time_parts', 'action' => 'view', $post['TimeParts']['id'])); ?>
 		</td>
 		<td>
-			<?php echo $this->Html->link($post['Countries']['id'], array('controller' => 'countries', 'action' => 'view', $post['Countries']['id'])); ?>
+			<?php echo $this->Html->link($post['Countries']['city'], array('controller' => 'countries', 'action' => 'view', $post['Countries']['id'])); ?>
 		</td>
 		<td>
-			<?php echo $this->Html->link($post['Users']['id'], array('controller' => 'users', 'action' => 'view', $post['Users']['id'])); ?>
+			<?php echo $this->Html->link($post['Users']['full_name'], array('controller' => 'users', 'action' => 'view', $post['Users']['id'])); ?>
 		</td>
 		<td>
 			<?php echo $this->Html->link($post['Categories']['name'], array('controller' => 'categories', 'action' => 'view', $post['Categories']['id'])); ?>
 		</td>
+		<td><?php echo h($post['Post']['phone']); ?>&nbsp;</td>
 		<td><?php echo h($post['Post']['start_date']); ?>&nbsp;</td>
 		<td><?php echo h($post['Post']['end_date']); ?>&nbsp;</td>
+		<td><?php echo h($post['Post']['created']); ?>&nbsp;</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('View'), array('action' => 'view', $post['Post']['id'])); ?>
 			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $post['Post']['id'])); ?>

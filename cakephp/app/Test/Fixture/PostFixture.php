@@ -46,8 +46,8 @@ class PostFixture extends CakeTestFixture {
 			'countries_id' => 1,
 			'users_id' => 1,
 			'categories_id' => 1,
-			'start_date' => '2017-04-07 17:57:45',
-			'end_date' => '2017-04-07 17:57:45'
+			'start_date' => '2017-04-05 18:50:12',
+			'end_date' => '2017-04-05 18:50:12'
 		),
 	);
 
